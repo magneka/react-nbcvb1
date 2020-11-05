@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-import axiosTokenInstance from '../Instances/axiosTokenInstance'
+import axiosTokenInstance from './axiosTokenInstance'
 import { toast } from 'react-toastify';
 
 /***********************************************************************

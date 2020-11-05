@@ -7,7 +7,12 @@ import "./style.css";
 
 export default function App() {
 
-  const {users, getData} = useAxios()
+  const {state, getData} = useAxios();
+  const {state: state2, getData} = useAxios();
+
+  if (state.loading) return (
+    <span>Laster data</span>
+  )
 
   return (
     <div>
@@ -20,7 +25,12 @@ export default function App() {
 
     <div>
       <ul>
-        {users.map((item, i) => <li>{item.lastname}, {item.firstname}</li>)}
+        {!state.loading && (<ul>
+          {state.data.result.map((item, i) => 
+            <li>{item.lastname}, {item.firstname}</li>)            
+          }
+        </ul>)}
+
       </ul>
     </div>
 

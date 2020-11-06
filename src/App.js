@@ -8,7 +8,6 @@ import "./style.css";
 export default function App() {
 
   const {state, getData} = useAxios();
-  const {state: state2, getData} = useAxios();
 
   if (state.loading) return (
     <span>Laster data</span>
